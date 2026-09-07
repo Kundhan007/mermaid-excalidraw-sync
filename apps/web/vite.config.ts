@@ -62,10 +62,9 @@ export default defineConfig({
         See more: https://vitejs.dev/guide/performance.html#warm-up-frequently-used-files
       */
       clientFiles: [
-        "./testcases/**/*",
+        "./src/testcases/**/*",
         "../../packages/core/src/parser/**/*",
         "../../packages/core/src/graphToExcalidraw.ts",
-        "./initExcalidraw.ts",
       ],
     },
   },

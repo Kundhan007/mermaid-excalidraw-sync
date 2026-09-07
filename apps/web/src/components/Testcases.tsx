@@ -1,13 +1,13 @@
-import { FLOWCHART_DIAGRAM_TESTCASES } from "./testcases/flowchart";
-import { SEQUENCE_DIAGRAM_TESTCASES } from "./testcases/sequence.ts";
-import { CLASS_DIAGRAM_TESTCASES } from "./testcases/class.ts";
-import { ERD_DIAGRAM_TESTCASES } from "./testcases/er.ts";
-import { STATE_DIAGRAM_TESTCASES } from "./testcases/state.ts";
-import { UNSUPPORTED_DIAGRAM_TESTCASES } from "./testcases/unsupported.ts";
+import { FLOWCHART_DIAGRAM_TESTCASES } from "../testcases/flowchart";
+import { SEQUENCE_DIAGRAM_TESTCASES } from "../testcases/sequence";
+import { CLASS_DIAGRAM_TESTCASES } from "../testcases/class";
+import { ERD_DIAGRAM_TESTCASES } from "../testcases/er";
+import { STATE_DIAGRAM_TESTCASES } from "../testcases/state";
+import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../testcases/unsupported";
 
 import SingleTestCase, { TestCase } from "./SingleTestCase.tsx";
-import type { ActiveTestCaseIndex, MermaidData } from "./index.tsx";
-import { usePersistedSectionState } from "./usePersistedSectionState.ts";
+import type { ActiveTestCaseIndex, MermaidData } from "../types";
+import { usePersistedSectionState } from "../hooks/usePersistedSectionState";
 
 interface TestcasesProps {
   onChange: (

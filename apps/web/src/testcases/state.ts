@@ -1,4 +1,4 @@
-import type { TestCase } from "../SingleTestCase";
+import type { TestCase } from "../components/SingleTestCase";
 
 export const STATE_DIAGRAM_TESTCASES: TestCase[] = [
   {

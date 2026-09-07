@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./index.tsx";
+import App from "./App";
 import mermaid from "mermaid";
 import { DEFAULT_FONT_SIZE, MERMAID_CONFIG } from "@mermaid-excalidraw-sync/core/constants";
-import { ensureExcalidrawFontsLoaded } from "./loadExcalidrawFonts.ts";
+import { ensureExcalidrawFontsLoaded } from "./lib/loadExcalidrawFonts";
 
 // Initialize Mermaid
 mermaid.initialize({

@@ -1,4 +1,4 @@
-import "./GithubCorner.scss";
+import "../styles/GithubCorner.scss";
 
 // https://github.com/tholman/github-corners
 const GitHubCorner = () => {

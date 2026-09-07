@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { MermaidDiagram } from "./MermaidDiagram.tsx";
-import type { ActiveTestCaseIndex, MermaidData } from "./index.tsx";
-import { usePersistedSectionState } from "./usePersistedSectionState.ts";
+import { MermaidDiagram } from "./MermaidDiagram";
+import type { ActiveTestCaseIndex, MermaidData } from "../types";
+import { usePersistedSectionState } from "../hooks/usePersistedSectionState";
 
 interface CustomTestProps {
   onChange: (

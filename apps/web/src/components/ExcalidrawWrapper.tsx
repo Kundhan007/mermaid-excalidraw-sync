@@ -6,8 +6,8 @@ import {
 import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
 import { graphToExcalidraw } from "@mermaid-excalidraw-sync/core/graphToExcalidraw";
 import { DEFAULT_FONT_SIZE } from "@mermaid-excalidraw-sync/core/constants";
-import type { MermaidData } from "./";
-import { ensureExcalidrawFontsLoaded } from "./loadExcalidrawFonts";
+import type { MermaidData } from "../types";
+import { ensureExcalidrawFontsLoaded } from "../lib/loadExcalidrawFonts";
 
 interface ExcalidrawWrapperProps {
   mermaidDefinition: MermaidData["definition"];

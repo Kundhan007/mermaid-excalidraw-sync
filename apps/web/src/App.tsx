@@ -3,30 +3,21 @@ import {
   convertToExcalidrawElements,
 } from "@excalidraw/excalidraw";
 import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
-import CustomTest from "./CustomTest.tsx";
-import ExcalidrawWrapper from "./ExcalidrawWrapper.tsx";
-import Testcases from "./Testcases.tsx";
+import CustomTest from "./components/CustomTest";
+import ExcalidrawWrapper from "./components/ExcalidrawWrapper";
+import Testcases from "./components/Testcases";
 import { parseMermaid } from "@mermaid-excalidraw-sync/core/parseMermaid";
-import GitHubCorner from "./GitHubCorner.tsx";
+import GitHubCorner from "./components/GitHubCorner";
+import type {
+  ActiveTestCaseIndex,
+  MermaidData,
+  ThemeMode,
+  ThemeState,
+} from "./types";
 
 import "@excalidraw/excalidraw/index.css";
 
-export interface MermaidData {
-  definition: string;
-  output: Awaited<ReturnType<typeof parseMermaid>> | null;
-  error: string | null;
-}
-
-export type ActiveTestCaseIndex = number | "custom" | null;
-
 const THEME_STORAGE_KEY = "mermaid-to-excalidraw-theme";
-
-type ThemeMode = "light" | "dark";
-
-interface ThemeState {
-  mode: ThemeMode;
-  isUserPreference: boolean;
-}
 
 const getSystemThemeMode = (): ThemeMode => {
   if (typeof window === "undefined") {

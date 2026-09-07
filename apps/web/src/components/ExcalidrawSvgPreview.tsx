@@ -6,7 +6,7 @@ import {
 import { DEFAULT_FONT_SIZE } from "@mermaid-excalidraw-sync/core/constants";
 import { graphToExcalidraw } from "@mermaid-excalidraw-sync/core/graphToExcalidraw";
 import { parseMermaid } from "@mermaid-excalidraw-sync/core/parseMermaid";
-import { ensureExcalidrawFontsLoaded } from "./loadExcalidrawFonts";
+import { ensureExcalidrawFontsLoaded } from "../lib/loadExcalidrawFonts";
 
 interface ExcalidrawSvgPreviewProps {
   definition: string;
