@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.common.json",
+  "extends": "../../tsconfig.common.json",
   "compilerOptions": {
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
@@ -10,7 +10,13 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+
+    "baseUrl": ".",
+    "paths": {
+      "@mermaid-excalidraw-sync/core": ["../../packages/core/src/index.ts"],
+      "@mermaid-excalidraw-sync/core/*": ["../../packages/core/src/*"]
+    }
   },
   "include": ["./**/*"]
 }

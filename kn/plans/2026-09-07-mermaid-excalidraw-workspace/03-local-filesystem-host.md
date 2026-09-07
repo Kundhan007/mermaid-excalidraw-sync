@@ -14,7 +14,7 @@ The current Vite playground is browser-only and uses localStorage. A browser can
 
 ```text
 package.json                         [modify]
-playground/
+apps/web/
 ├── platform/fileSystem.ts           [new, tentative]
 ├── platform/browserFileSystem.ts    [new, tentative]
 ├── platform/desktopFileSystem.ts    [new, tentative]
@@ -23,30 +23,30 @@ playground/
 ├── src/main.rs                      [new, tentative]
 ├── src/commands.rs                  [new, tentative]
 └── tauri.conf.json                  [new, tentative]
-playground/index.tsx                 [modify]
+apps/web/index.tsx                 [modify]
 ```
 
 ## File and function changes
 
-`playground/platform/fileSystem.ts` [new, tentative]
+`apps/web/platform/fileSystem.ts` [new, tentative]
 - `FileSystemAdapter` [new]: Define folder selection, tree listing, read, write, rename, delete, and external-change subscription contracts.
 
-`playground/platform/browserFileSystem.ts` [new, tentative]
+`apps/web/platform/browserFileSystem.ts` [new, tentative]
 - `createBrowserFileSystemAdapter()` [new]: Implement the restricted browser directory-handle fallback.
 
-`playground/platform/desktopFileSystem.ts` [new, tentative]
+`apps/web/platform/desktopFileSystem.ts` [new, tentative]
 - `createDesktopFileSystemAdapter()` [new]: Call Tauri commands for native Mac filesystem access and atomic writes.
 
-`playground/fileTree/FileTree.tsx` [new, tentative]
+`apps/web/fileTree/FileTree.tsx` [new, tentative]
 - `FileTree()` [new]: Render folders/files, active document selection, create/rename/delete actions, and external-change markers.
 
-`playground/fileTree/workspaceRepository.ts` [new, tentative]
+`apps/web/fileTree/workspaceRepository.ts` [new, tentative]
 - `loadDocumentPair()` / `saveDocumentPair()` [new]: Map an active Mermaid document and its Excalidraw scene to filesystem paths and serialized content.
 
-`desktop/src-tauri/src/commands.rs` [new, tentative]
+`apps/desktop/src-tauri/src/commands.rs` [new, tentative]
 - Native filesystem commands [new]: Enforce selected-root boundaries and perform atomic read/write/watch operations.
 
-`playground/index.tsx`
+`apps/web/index.tsx`
 - Workspace bootstrap [modify]: Connect the selected filesystem adapter, file tree, active document loading, and save status.
 
 ## Implementation plan

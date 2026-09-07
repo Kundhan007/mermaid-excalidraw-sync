@@ -1,6 +1,21 @@
-# mermaid-to-excalidraw
+# mermaid-excalidraw-sync
 
-Convert mermaid diagrams to excalidraw
+Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesystem, and version history.
+
+## Repository structure
+
+```text
+├── apps/
+│   └── web/               # Web workspace (React + Vite + Excalidraw canvas)
+├── packages/
+│   └── core/              # Mermaid → Excalidraw converter library
+│       ├── src/
+│       └── tests/
+├── e2e/                   # Playwright visual tests
+└── kn/plans/              # Implementation plans
+```
+
+`apps/web` imports the converter via the `@mermaid-excalidraw-sync/core` alias (resolved to `packages/core/src` in Vite and TS paths).
 
 ## Set up
 
@@ -10,16 +25,22 @@ Install packages:
 yarn
 ```
 
-Start development playground:
+Start development workspace:
 
 ```
 yarn start
 ```
 
-Build command:
+Build the core library:
 
 ```
 yarn build
+```
+
+Build the web app (typecheck + bundle):
+
+```
+yarn build:web
 ```
 
 ## Get started
@@ -93,9 +114,10 @@ Try out [here](https://mermaid-to-excalidraw.vercel.app).
 
 ## Development
 
+- `yarn test` to run unit tests
 - `yarn test:visual` to run visual tests
 - `yarn test:visual:update` to update visual tests
-- `yarn test:visual:dev` to run visual test dev server (usually better to use this over the playground)
+- `yarn test:visual:dev` to run visual test dev server
 
 ## API
 

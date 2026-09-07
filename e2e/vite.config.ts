@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { cpSync, mkdirSync } from "node:fs";
@@ -8,62 +7,54 @@ import { createRequire } from "node:module";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  root: __dirname,
   resolve: {
+    alias: {
+      "@mermaid-excalidraw-sync/core": resolve(
+        __dirname,
+        "../../packages/core/src"
+      ),
+    },
     dedupe: ["react", "react-dom", "react/jsx-runtime"],
-  },
-  build: {
-    outDir: "../public",
-    emptyOutDir: true,
-    assetsDir: "./",
-    minify: false,
-    sourcemap: true,
   },
   define: {
     "process.env.IS_PREACT": JSON.stringify("false"),
   },
   plugins: [
-    react(),
     {
       name: "copy-excalifont",
       configResolved() {
+        console.info(
+          "\n[task] Copying Excalifont font files from @excalidraw/excalidraw into e2e/public/fonts/",
+        );
+        // Copy Excalifont woff2 files from @excalidraw/excalidraw dist into
+        // e2e/public/fonts/ so Vite can serve them as static assets.
         const require_ = createRequire(import.meta.url);
         const excalidrawEntry = require_.resolve("@excalidraw/excalidraw");
         const srcFontsDir = resolve(
           dirname(excalidrawEntry),
           "fonts",
-          "Excalifont"
+          "Excalifont",
         );
         const destFontsDir = resolve(
           __dirname,
-          "..",
           "public",
           "fonts",
-          "Excalifont"
+          "Excalifont",
         );
-
         mkdirSync(destFontsDir, { recursive: true });
         cpSync(srcFontsDir, destFontsDir, { recursive: true });
       },
     },
+    {
+      name: "notify-build-start",
+      buildStart() {
+        console.info("\n[task] Starting Vite dev server for visual tests...\n");
+      },
+    },
   ],
   server: {
-    port: 3418,
-    open: true,
-    warmup: {
-      /*
-        A small performance improvement so that this file is already transformed, cached when we receive the request :)
-        See more: https://vitejs.dev/guide/performance.html#warm-up-frequently-used-files
-      */
-      clientFiles: [
-        "./testcases/**/*",
-        "../src/parser/**/*",
-        "../src/graphToExcalidraw.ts",
-        "./initExcalidraw.ts",
-      ],
-    },
-  },
-  // Enable source maps in dev mode
-  esbuild: {
-    sourcemap: true,
+    port: 3419,
+    fs: { allow: [__dirname, resolve(__dirname, "../..")] },
   },
 });

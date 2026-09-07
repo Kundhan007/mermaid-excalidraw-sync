@@ -4,8 +4,8 @@ import {
   convertToExcalidrawElements,
 } from "@excalidraw/excalidraw";
 import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
-import { graphToExcalidraw } from "../src/graphToExcalidraw";
-import { DEFAULT_FONT_SIZE } from "../src/constants";
+import { graphToExcalidraw } from "@mermaid-excalidraw-sync/core/graphToExcalidraw";
+import { DEFAULT_FONT_SIZE } from "@mermaid-excalidraw-sync/core/constants";
 import type { MermaidData } from "./";
 import { ensureExcalidrawFontsLoaded } from "./loadExcalidrawFonts";
 

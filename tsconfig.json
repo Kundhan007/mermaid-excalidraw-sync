@@ -1,8 +1,8 @@
 {
   "files": [],
   "references": [
-    { "path": "./src" },
-    { "path": "./playground" },
-    { "path": "./tests" }
+    { "path": "./packages/core/src" },
+    { "path": "./apps/web" },
+    { "path": "./packages/core/tests" }
   ]
 }

@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /dist
+/packages/core/dist
 /public
 .cache
 .parcel-cache
@@ -8,7 +9,7 @@
 /package
 
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -17,6 +18,7 @@
 
 # misc
 .DS_Store
+.idea/
 .env.local
 .env.development.local
 .env.test.local
@@ -32,4 +34,4 @@ CLAUDE.md
 
 playwright-report
 test-results
-visual-tests/public
+e2e/public

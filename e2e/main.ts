@@ -7,18 +7,18 @@ import {
 import { charWidth } from "@excalidraw/element";
 import { getFontString } from "@excalidraw/common";
 
-import { DEFAULT_FONT_SIZE, MERMAID_CONFIG } from "../src/constants";
-import { graphToExcalidraw } from "../src/graphToExcalidraw";
-import { parseMermaid } from "../src/parseMermaid";
-import { runMermaidTaskSequentially } from "../src/mermaidExecutionQueue";
+import { DEFAULT_FONT_SIZE, MERMAID_CONFIG } from "@mermaid-excalidraw-sync/core/constants";
+import { graphToExcalidraw } from "@mermaid-excalidraw-sync/core/graphToExcalidraw";
+import { parseMermaid } from "@mermaid-excalidraw-sync/core/parseMermaid";
+import { runMermaidTaskSequentially } from "@mermaid-excalidraw-sync/core/mermaidExecutionQueue";
 
-import { FLOWCHART_DIAGRAM_TESTCASES } from "../playground/testcases/flowchart";
-import { SEQUENCE_DIAGRAM_TESTCASES } from "../playground/testcases/sequence";
-import { CLASS_DIAGRAM_TESTCASES } from "../playground/testcases/class";
-import { ERD_DIAGRAM_TESTCASES } from "../playground/testcases/er";
-import { STATE_DIAGRAM_TESTCASES } from "../playground/testcases/state";
-import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../playground/testcases/unsupported";
-import { ensureExcalidrawFontsLoaded } from "../playground/loadExcalidrawFonts";
+import { FLOWCHART_DIAGRAM_TESTCASES } from "../apps/web/testcases/flowchart";
+import { SEQUENCE_DIAGRAM_TESTCASES } from "../apps/web/testcases/sequence";
+import { CLASS_DIAGRAM_TESTCASES } from "../apps/web/testcases/class";
+import { ERD_DIAGRAM_TESTCASES } from "../apps/web/testcases/er";
+import { STATE_DIAGRAM_TESTCASES } from "../apps/web/testcases/state";
+import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../apps/web/testcases/unsupported";
+import { ensureExcalidrawFontsLoaded } from "../apps/web/loadExcalidrawFonts";
 
 interface TestCase {
   type: string;

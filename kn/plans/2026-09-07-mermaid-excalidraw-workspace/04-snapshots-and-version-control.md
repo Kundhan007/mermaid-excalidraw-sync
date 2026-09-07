@@ -13,34 +13,34 @@ Use two layers: an app-managed snapshot journal for guaranteed recovery, and opt
 ## Change tree
 
 ```text
-playground/
+apps/web/
 ├── history/VersionHistory.tsx       [new, tentative]
 ├── history/snapshotScheduler.ts     [new, tentative]
 └── history/versionRepository.ts     [new, tentative]
-desktop/src-tauri/src/
+apps/desktop/src-tauri/src/
 └── versioning.rs                    [new, tentative]
-playground/UtilityPanel.tsx          [modify]
-playground/state/workspaceTypes.ts   [modify]
+apps/web/UtilityPanel.tsx          [modify]
+apps/web/state/workspaceTypes.ts   [modify]
 ```
 
 ## File and function changes
 
-`playground/history/snapshotScheduler.ts` [new, tentative]
+`apps/web/history/snapshotScheduler.ts` [new, tentative]
 - `startSnapshotScheduler()` [new]: Schedule a 20-minute dirty-document snapshot and flush pending work on close/background.
 
-`playground/history/versionRepository.ts` [new, tentative]
+`apps/web/history/versionRepository.ts` [new, tentative]
 - `createSnapshot()` / `listSnapshots()` / `restoreSnapshot()` [new]: Store immutable source, scene, metadata, and recovery snapshots.
 
-`playground/history/VersionHistory.tsx` [new, tentative]
+`apps/web/history/VersionHistory.tsx` [new, tentative]
 - `VersionHistory()` [new]: Show timestamps, changed side, revision labels, preview/diff action, and restore confirmation.
 
-`desktop/src-tauri/src/versioning.rs` [new, tentative]
+`apps/desktop/src-tauri/src/versioning.rs` [new, tentative]
 - Native snapshot and optional Git operations [new]: Write version records safely and expose repository status without touching unrelated files.
 
-`playground/UtilityPanel.tsx`
+`apps/web/UtilityPanel.tsx`
 - History controls [modify]: Add last-saved time, next snapshot time, restore, and optional Git settings.
 
-`playground/state/workspaceTypes.ts`
+`apps/web/state/workspaceTypes.ts`
 - Version metadata [modify]: Add snapshot IDs, source/canvas revision IDs, save origin, and restore provenance.
 
 ## Implementation plan

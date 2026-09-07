@@ -6,7 +6,7 @@ import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
 import CustomTest from "./CustomTest.tsx";
 import ExcalidrawWrapper from "./ExcalidrawWrapper.tsx";
 import Testcases from "./Testcases.tsx";
-import { parseMermaid } from "../src/parseMermaid.ts";
+import { parseMermaid } from "@mermaid-excalidraw-sync/core/parseMermaid";
 import GitHubCorner from "./GitHubCorner.tsx";
 
 import "@excalidraw/excalidraw/index.css";

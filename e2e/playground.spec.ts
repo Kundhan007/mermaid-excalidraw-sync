@@ -1,10 +1,10 @@
 import { test, expect, Page } from "@playwright/test";
-import { FLOWCHART_DIAGRAM_TESTCASES } from "../playground/testcases/flowchart";
-import { SEQUENCE_DIAGRAM_TESTCASES } from "../playground/testcases/sequence";
-import { CLASS_DIAGRAM_TESTCASES } from "../playground/testcases/class";
-import { ERD_DIAGRAM_TESTCASES } from "../playground/testcases/er";
-import { STATE_DIAGRAM_TESTCASES } from "../playground/testcases/state";
-import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../playground/testcases/unsupported";
+import { FLOWCHART_DIAGRAM_TESTCASES } from "../apps/web/testcases/flowchart";
+import { SEQUENCE_DIAGRAM_TESTCASES } from "../apps/web/testcases/sequence";
+import { CLASS_DIAGRAM_TESTCASES } from "../apps/web/testcases/class";
+import { ERD_DIAGRAM_TESTCASES } from "../apps/web/testcases/er";
+import { STATE_DIAGRAM_TESTCASES } from "../apps/web/testcases/state";
+import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../apps/web/testcases/unsupported";
 
 test.describe.configure({ mode: "serial" });
 
