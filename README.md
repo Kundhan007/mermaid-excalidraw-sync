@@ -11,7 +11,7 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 │   └── core/              # Mermaid → Excalidraw converter library
 │       ├── src/
 │       └── tests/
-├── e2e/                   # Playwright visual tests
+├── e2e/                   # (removed for now — Playwright visual tests)
 └── kn/plans/              # Implementation plans
 ```
 
@@ -115,9 +115,6 @@ Try out [here](https://mermaid-to-excalidraw.vercel.app).
 ## Development
 
 - `yarn test` to run unit tests
-- `yarn test:visual` to run visual tests
-- `yarn test:visual:update` to update visual tests
-- `yarn test:visual:dev` to run visual test dev server
 
 ## API
 
