@@ -12,7 +12,7 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 │       ├── src/
 │       └── tests/
 ├── e2e/                   # (removed for now — Playwright visual tests)
-└── kn/plans/              # Implementation plans
+└── plans/                 # Implementation plans
 ```
 
 `apps/web` imports the converter via the `@mermaid-excalidraw-sync/core` alias (resolved to `packages/core/src` in Vite and TS paths).
