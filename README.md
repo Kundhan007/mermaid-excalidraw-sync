@@ -6,22 +6,22 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 
 ```text
 ├── packages/
-│   └── excalidraw_service/    # ALL conversion logic (TypeScript library, frozen)
-│       ├── src/               #   mermaid → excalidraw pipeline
-│       └── tests/             #   unit tests (vitest)
-├── frontend/                  # Minimal web UI (2 tabs: Mermaid | Excalidraw)
-│   ├── index.html
-│   └── src/                   #   tab switching, canvas mount, API client
-├── backend/                   # Python FastAPI — the file/version clerk
-│   ├── pyproject.toml         #   fastapi, uvicorn, watchdog, pytest
-│   ├── app/                   #   files, watching, versions (plans 03–04)
-│   └── tests/
-├── plans/                     # Implementation plans
-├── public/                    # frontend build output (generated, gitignored)
-└── package.json               # JS workspace root (frontend + packages)
+│   ├── backend/                     # Python FastAPI — the file/version clerk
+│   │   ├── pyproject.toml           #   fastapi, uvicorn, watchdog, pytest
+│   │   ├── app/                     #   files, watching, versions (plans 03–04)
+│   │   └── tests/
+│   └── frontend/                    # ALL browser-side code (TypeScript)
+│       ├── excalidraw_service/      #   ALL conversion logic (frozen library)
+│       │   ├── src/                 #     mermaid → excalidraw pipeline
+│       │   └── tests/               #     vitest unit tests
+│       └── web/                     #   minimal UI (2 tabs: Mermaid | Excalidraw)
+├── plans/                           # Implementation plans
+├── public/                          # frontend build output (generated, gitignored)
+├── package.json                     # JS workspace root
+└── yarn.lock
 ```
 
-- `frontend` imports the converter via the `@mermaid-excalidraw-sync/excalidraw-service` alias (resolved to `packages/excalidraw_service/src` in Vite and TS paths).
+- `packages/frontend/web` imports the converter via the `@mermaid-excalidraw-sync/excalidraw-service` alias (resolved to `../excalidraw_service/src`).
 - **The browser is the brain** — conversion and sync logic run in-tab; the Python backend only reads/writes files and versions over HTTP.
 - The conversion library is upstream-derived and feature-complete: we do not add JS logic there.
 

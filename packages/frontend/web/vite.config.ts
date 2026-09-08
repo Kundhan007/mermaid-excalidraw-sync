@@ -12,13 +12,13 @@ export default defineConfig({
     alias: {
       "@mermaid-excalidraw-sync/excalidraw-service": resolve(
         __dirname,
-        "../packages/excalidraw_service/src"
+        "../excalidraw_service/src"
       ),
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime"],
   },
   build: {
-    outDir: "../../public",
+    outDir: "../../../public",
     emptyOutDir: true,
     assetsDir: "./",
     minify: false,
@@ -63,8 +63,8 @@ export default defineConfig({
       */
       clientFiles: [
         "./src/testcases/**/*",
-        "../packages/excalidraw_service/src/parser/**/*",
-        "../packages/excalidraw_service/src/graphToExcalidraw.ts",
+        "../excalidraw_service/src/parser/**/*",
+        "../excalidraw_service/src/graphToExcalidraw.ts",
       ],
     },
   },

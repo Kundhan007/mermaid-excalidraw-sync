@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /dist
-/packages/excalidraw_service/dist
+/packages/frontend/excalidraw_service/dist
 /public
 .cache
 .parcel-cache
