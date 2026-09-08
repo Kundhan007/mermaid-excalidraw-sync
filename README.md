@@ -17,7 +17,7 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 ├── package.json                      # JS workspace root (frontend/*)
 └── yarn.lock                         # pinned dep versions (the JS poetry.lock)
 
-# generated, gitignored — never committed: node_modules/, public/, api/.venv/, __pycache__/
+# generated, gitignored — never committed: node_modules/, frontend/public/, frontend/converter/dist/, api/.venv/, __pycache__/
 ```
 
 ## Naming & placement conventions

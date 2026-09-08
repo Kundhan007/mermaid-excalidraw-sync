@@ -18,7 +18,7 @@ export default defineConfig({
     dedupe: ["react", "react-dom", "react/jsx-runtime"],
   },
   build: {
-    outDir: "../../../public",
+    outDir: "../public",
     emptyOutDir: true,
     assetsDir: "./",
     minify: false,
@@ -41,7 +41,6 @@ export default defineConfig({
         );
         const destFontsDir = resolve(
           __dirname,
-          "..",
           "..",
           "public",
           "fonts",
