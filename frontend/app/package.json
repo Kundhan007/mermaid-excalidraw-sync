@@ -12,7 +12,7 @@
     "preview": "vite build && vite preview"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "^0.18.0-a9ca16e",
+    "@excalidraw/excalidraw": "0.18.0-a9ca16e",
     "@mermaid-excalidraw-sync/converter": "0.1.0",
     "mermaid": "^11.12.1",
     "react": "18.2.0",
@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.4",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "3.6.0",
     "sass": "1.74.1",
     "typescript": "5.2.2",

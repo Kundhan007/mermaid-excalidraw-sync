@@ -6,7 +6,7 @@
   "type": "module",
   "license": "MIT",
   "workspaces": [
-    "frontend/*"
+    "app", "converter"
   ],
   "scripts": {
     "dev": "yarn workspace @mermaid-excalidraw-sync/app dev",

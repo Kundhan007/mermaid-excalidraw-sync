@@ -45,28 +45,23 @@ Notes:
 
 ## Set up
 
-Install packages:
+All JS commands run from `frontend/` (that is the JS workspace root — `package.json`, `yarn.lock`, `node_modules` live there):
 
 ```
+cd frontend
 yarn
+yarn start          # dev server (UI, hot reload)
+yarn build          # build converter library
+yarn build:frontend # typecheck + bundle UI -> frontend/public/
 ```
 
-Start development workspace:
+Backend (Python):
 
 ```
-yarn start
-```
-
-Build the core library:
-
-```
-yarn build
-```
-
-Build the web app (typecheck + bundle):
-
-```
-yarn build:web
+cd api
+python3 -m venv .venv
+.venv/bin/pip install -e .
+.venv/bin/uvicorn app.main:app --port 8123
 ```
 
 ## Get started
