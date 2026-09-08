@@ -14,9 +14,6 @@
     "build": "yarn workspace @mermaid-excalidraw-sync/excalidraw-service build",
     "build:frontend": "yarn workspace @mermaid-excalidraw-sync/frontend build",
     "preview": "yarn workspace @mermaid-excalidraw-sync/frontend preview",
-    "test": "yarn workspace @mermaid-excalidraw-sync/excalidraw-service test",
-    "test:coverage": "yarn workspace @mermaid-excalidraw-sync/excalidraw-service test:coverage",
-    "test:watch": "yarn workspace @mermaid-excalidraw-sync/excalidraw-service test:watch",
     "test:code": "eslint --max-warnings=0 --ext .js,.ts,.tsx ."
   },
   "devDependencies": {

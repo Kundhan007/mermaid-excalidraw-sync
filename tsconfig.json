@@ -2,7 +2,6 @@
   "files": [],
   "references": [
     { "path": "./packages/frontend/excalidraw_service/src" },
-    { "path": "./packages/frontend/web" },
-    { "path": "./packages/frontend/excalidraw_service/tests" }
+    { "path": "./packages/frontend/web" }
   ]
 }

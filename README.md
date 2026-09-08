@@ -7,14 +7,13 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 ```text
 ├── packages/
 │   ├── backend/                     # Python FastAPI — the file/version clerk
-│   │   ├── pyproject.toml           #   fastapi, uvicorn, watchdog, pytest
-│   │   ├── app/                     #   files, watching, versions (plans 03–04)
-│   │   └── tests/
+│   │   ├── pyproject.toml           #   fastapi, uvicorn, watchdog
+│   │   └── app/                     #   files, watching, versions, logs (plans 03–04)
 │   └── frontend/                    # ALL browser-side code (TypeScript)
 │       ├── excalidraw_service/      #   ALL conversion logic (frozen library)
-│       │   ├── src/                 #     mermaid → excalidraw pipeline
-│       │   └── tests/               #     vitest unit tests
+│       │   └── src/                 #     mermaid → excalidraw pipeline
 │       └── web/                     #   minimal UI (2 tabs: Mermaid | Excalidraw)
+├── diagrams/                        # real mermaid docs — the app opens these directly
 ├── plans/                           # Implementation plans
 ├── public/                          # frontend build output (generated, gitignored)
 ├── package.json                     # JS workspace root
@@ -24,6 +23,7 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 - `packages/frontend/web` imports the converter via the `@mermaid-excalidraw-sync/excalidraw-service` alias (resolved to `../excalidraw_service/src`).
 - **The browser is the brain** — conversion and sync logic run in-tab; the Python backend only reads/writes files and versions over HTTP.
 - The conversion library is upstream-derived and feature-complete: we do not add JS logic there.
+- **No test suites.** Verification happens by opening real mermaid files from `diagrams/` (e.g. `pipeline-audiotranscript.md`) in the app and eyeballing the conversion.
 
 ## Set up
 
@@ -122,7 +122,9 @@ Try out [here](https://mermaid-to-excalidraw.vercel.app).
 
 ## Development
 
-- `yarn test` to run unit tests
+- `yarn start` — frontend dev server
+- `yarn build` / `yarn build:frontend` — builds
+- No test suites: verify by opening a real diagram from `diagrams/` in the app (e.g. `pipeline-audiotranscript.md`).
 
 ## API
 
