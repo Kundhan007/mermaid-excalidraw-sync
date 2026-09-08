@@ -7,17 +7,17 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 ```text
 ├── api/                              # BACKEND (Python, deployable)
 │   ├── pyproject.toml                #   fastapi, uvicorn, watchdog
-│   ├── app/                          #   files, watching, versions, logs (plans 03–04)
-│   └── logs/                         #   runtime logs (generated)
+│   └── app/                          #   files, watching, versions, logs (plans 03–04)
 ├── frontend/                         # BROWSER SIDE (TypeScript)
 │   ├── app/                          #   the UI application (2 tabs: Mermaid | Excalidraw)
 │   └── converter/                    #   conversion engine library (frozen, upstream-derived)
 │       └── src/                      #     mermaid → excalidraw pipeline
 ├── diagrams/                         # real mermaid docs — the app opens these directly
 ├── plans/                            # Implementation plans
-├── public/                           # frontend build output (generated, gitignored)
 ├── package.json                      # JS workspace root (frontend/*)
-└── yarn.lock
+└── yarn.lock                         # pinned dep versions (the JS poetry.lock)
+
+# generated, gitignored — never committed: node_modules/, public/, api/.venv/, __pycache__/
 ```
 
 ## Naming & placement conventions

@@ -1,5 +1,5 @@
 {
-  "name": "@mermaid-excalidraw-sync/frontend",
+  "name": "@mermaid-excalidraw-sync/app",
   "version": "0.1.0",
   "private": true,
   "description": "Mermaid Excalidraw Sync web workspace",
