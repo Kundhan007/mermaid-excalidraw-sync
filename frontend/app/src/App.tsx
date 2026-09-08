@@ -6,7 +6,7 @@ import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
 import CustomTest from "./components/CustomTest";
 import ExcalidrawWrapper from "./components/ExcalidrawWrapper";
 import Testcases from "./components/Testcases";
-import { parseMermaid } from "@mermaid-excalidraw-sync/excalidraw-service/parseMermaid";
+import { parseMermaid } from "@mermaid-excalidraw-sync/converter/parseMermaid";
 import GitHubCorner from "./components/GitHubCorner";
 import type {
   ActiveTestCaseIndex,

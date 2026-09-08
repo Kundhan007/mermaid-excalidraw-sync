@@ -1,7 +1,7 @@
 {
-  "name": "@mermaid-excalidraw-sync/excalidraw-service",
+  "name": "@mermaid-excalidraw-sync/converter",
   "version": "0.1.0",
-  "description": "Mermaid to Excalidraw converter (conversion logic only)",
+  "description": "Mermaid → Excalidraw conversion engine (browser-side library)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

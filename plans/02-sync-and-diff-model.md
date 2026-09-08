@@ -23,7 +23,7 @@ frontend/
     ├── workspaceStore.ts        [new, tentative]
     ├── syncController.ts        [new, tentative]
     └── sceneSerialization.ts    [new, tentative]
-packages/frontend/excalidraw_service/src/
+frontend/converter/src/
 └── interfaces.ts                [modify, if shared document types are exported]
 ```
 

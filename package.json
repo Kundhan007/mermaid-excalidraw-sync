@@ -6,12 +6,12 @@
   "type": "module",
   "license": "MIT",
   "workspaces": [
-    "packages/frontend/*"
+    "frontend/*"
   ],
   "scripts": {
     "dev": "yarn workspace @mermaid-excalidraw-sync/frontend dev",
     "start": "yarn workspace @mermaid-excalidraw-sync/frontend dev",
-    "build": "yarn workspace @mermaid-excalidraw-sync/excalidraw-service build",
+    "build": "yarn workspace @mermaid-excalidraw-sync/converter build",
     "build:frontend": "yarn workspace @mermaid-excalidraw-sync/frontend build",
     "preview": "yarn workspace @mermaid-excalidraw-sync/frontend preview",
     "test:code": "eslint --max-warnings=0 --ext .js,.ts,.tsx ."
@@ -30,6 +30,7 @@
     "vite": "5.2.8"
   },
   "resolutions": {
-    "@babel/preset-env": "7.13.8"
+    "@babel/preset-env": "7.13.8",
+    "jotai-scope": "0.7.1"
   }
 }

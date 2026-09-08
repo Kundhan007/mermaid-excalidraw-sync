@@ -3874,10 +3874,10 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jotai-scope@0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/jotai-scope/-/jotai-scope-0.7.2.tgz#3e9ec5b743bd9f36b08b32cf5151786049bfcce7"
-  integrity sha512-Gwed97f3dDObrO43++2lRcgOqw4O2sdr4JCjP/7eHK1oPACDJ7xKHGScpJX9XaflU+KBHXF+VhwECnzcaQiShg==
+jotai-scope@0.7.1, jotai-scope@0.7.2:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/jotai-scope/-/jotai-scope-0.7.1.tgz#5f2ef65837bd1db754cfeac435daad4cdd9f77fd"
+  integrity sha512-oFz91+fHy6U5v2zwLlE4fQja38J56FoY6h4c8SJluNQGwggfSIr/gIG5rXTaDLE/9AuPfx5kWZS7HhAjlZRb1g==
 
 jotai@2.11.0:
   version "2.11.0"

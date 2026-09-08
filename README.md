@@ -5,24 +5,40 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 ## Repository structure
 
 ```text
-├── packages/
-│   ├── backend/                     # Python FastAPI — the file/version clerk
-│   │   ├── pyproject.toml           #   fastapi, uvicorn, watchdog
-│   │   └── app/                     #   files, watching, versions, logs (plans 03–04)
-│   └── frontend/                    # ALL browser-side code (TypeScript)
-│       ├── excalidraw_service/      #   ALL conversion logic (frozen library)
-│       │   └── src/                 #     mermaid → excalidraw pipeline
-│       └── web/                     #   minimal UI (2 tabs: Mermaid | Excalidraw)
-├── diagrams/                        # real mermaid docs — the app opens these directly
-├── plans/                           # Implementation plans
-├── public/                          # frontend build output (generated, gitignored)
-├── package.json                     # JS workspace root
+├── api/                              # BACKEND (Python, deployable)
+│   ├── pyproject.toml                #   fastapi, uvicorn, watchdog
+│   ├── app/                          #   files, watching, versions, logs (plans 03–04)
+│   └── logs/                         #   runtime logs (generated)
+├── frontend/                         # BROWSER SIDE (TypeScript)
+│   ├── app/                          #   the UI application (2 tabs: Mermaid | Excalidraw)
+│   └── converter/                    #   conversion engine library (frozen, upstream-derived)
+│       └── src/                      #     mermaid → excalidraw pipeline
+├── diagrams/                         # real mermaid docs — the app opens these directly
+├── plans/                            # Implementation plans
+├── public/                           # frontend build output (generated, gitignored)
+├── package.json                      # JS workspace root (frontend/*)
 └── yarn.lock
 ```
 
-- `packages/frontend/web` imports the converter via the `@mermaid-excalidraw-sync/excalidraw-service` alias (resolved to `../excalidraw_service/src`).
+## Naming & placement conventions
+
+| Kind | Naming rule | Lives in | Examples |
+|---|---|---|---|
+| Deployable app (runs, listens, serves) | named by its role: `api`, `app` | top level | `api/` (FastAPI server), `frontend/app/` (UI) |
+| Library (imported, never runs) | named by what it does, no `-service` suffix | beside its consumer | `frontend/converter/` |
+| Diagrams (user content) | real files, no fixtures | `diagrams/` | `pipeline-audiotranscript.md` |
+
+What goes where:
+
+- **`api/`** — anything touching disk, versions, watching, logs. Python only. No rendering, no diagram semantics.
+- **`frontend/app/`** — UI code: tabs, canvas mount, fetch calls, sync/conflict decisions (the brain).
+- **`frontend/converter/`** — mermaid → excalidraw math only. Frozen: we do not add JS logic here.
+- A new runtime piece (e.g. a CLI) becomes a top-level app folder; a new shared browser lib becomes `frontend/<name>/`.
+
+Notes:
+
+- `frontend/app` imports the engine via the `@mermaid-excalidraw-sync/converter` alias (resolved to `../converter/src`).
 - **The browser is the brain** — conversion and sync logic run in-tab; the Python backend only reads/writes files and versions over HTTP.
-- The conversion library is upstream-derived and feature-complete: we do not add JS logic there.
 - **No test suites.** Verification happens by opening real mermaid files from `diagrams/` (e.g. `pipeline-audiotranscript.md`) in the app and eyeballing the conversion.
 
 ## Set up

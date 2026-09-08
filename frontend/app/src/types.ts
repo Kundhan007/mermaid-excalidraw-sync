@@ -1,4 +1,4 @@
-import { parseMermaid } from "@mermaid-excalidraw-sync/excalidraw-service/parseMermaid";
+import { parseMermaid } from "@mermaid-excalidraw-sync/converter/parseMermaid";
 
 export interface MermaidData {
   definition: string;
