@@ -10,9 +10,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   resolve: {
     alias: {
-      "@mermaid-excalidraw-sync/core": resolve(
+      "@mermaid-excalidraw-sync/excalidraw-service": resolve(
         __dirname,
-        "../../packages/core/src"
+        "../packages/excalidraw_service/src"
       ),
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime"],
@@ -63,8 +63,8 @@ export default defineConfig({
       */
       clientFiles: [
         "./src/testcases/**/*",
-        "../../packages/core/src/parser/**/*",
-        "../../packages/core/src/graphToExcalidraw.ts",
+        "../packages/excalidraw_service/src/parser/**/*",
+        "../packages/excalidraw_service/src/graphToExcalidraw.ts",
       ],
     },
   },

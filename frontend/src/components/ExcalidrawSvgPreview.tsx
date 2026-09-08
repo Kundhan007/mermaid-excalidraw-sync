@@ -3,9 +3,9 @@ import {
   convertToExcalidrawElements,
   exportToSvg,
 } from "@excalidraw/excalidraw";
-import { DEFAULT_FONT_SIZE } from "@mermaid-excalidraw-sync/core/constants";
-import { graphToExcalidraw } from "@mermaid-excalidraw-sync/core/graphToExcalidraw";
-import { parseMermaid } from "@mermaid-excalidraw-sync/core/parseMermaid";
+import { DEFAULT_FONT_SIZE } from "@mermaid-excalidraw-sync/excalidraw-service/constants";
+import { graphToExcalidraw } from "@mermaid-excalidraw-sync/excalidraw-service/graphToExcalidraw";
+import { parseMermaid } from "@mermaid-excalidraw-sync/excalidraw-service/parseMermaid";
 import { ensureExcalidrawFontsLoaded } from "../lib/loadExcalidrawFonts";
 
 interface ExcalidrawSvgPreviewProps {

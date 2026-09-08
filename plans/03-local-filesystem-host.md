@@ -14,7 +14,7 @@ The current Vite playground is browser-only and uses localStorage. A browser can
 
 ```text
 package.json                         [modify]
-apps/web/
+frontend/
 ├── platform/fileSystem.ts           [new, tentative]
 ├── platform/browserFileSystem.ts    [new, tentative]
 ├── platform/desktopFileSystem.ts    [new, tentative]
@@ -23,30 +23,30 @@ apps/web/
 ├── src/main.rs                      [new, tentative]
 ├── src/commands.rs                  [new, tentative]
 └── tauri.conf.json                  [new, tentative]
-apps/web/index.tsx                 [modify]
+frontend/index.tsx                 [modify]
 ```
 
 ## File and function changes
 
-`apps/web/platform/fileSystem.ts` [new, tentative]
+`frontend/platform/fileSystem.ts` [new, tentative]
 - `FileSystemAdapter` [new]: Define folder selection, tree listing, read, write, rename, delete, and external-change subscription contracts.
 
-`apps/web/platform/browserFileSystem.ts` [new, tentative]
+`frontend/platform/browserFileSystem.ts` [new, tentative]
 - `createBrowserFileSystemAdapter()` [new]: Implement the restricted browser directory-handle fallback.
 
-`apps/web/platform/desktopFileSystem.ts` [new, tentative]
+`frontend/platform/desktopFileSystem.ts` [new, tentative]
 - `createDesktopFileSystemAdapter()` [new]: Call Tauri commands for native Mac filesystem access and atomic writes.
 
-`apps/web/fileTree/FileTree.tsx` [new, tentative]
+`frontend/fileTree/FileTree.tsx` [new, tentative]
 - `FileTree()` [new]: Render folders/files, active document selection, create/rename/delete actions, and external-change markers.
 
-`apps/web/fileTree/workspaceRepository.ts` [new, tentative]
+`frontend/fileTree/workspaceRepository.ts` [new, tentative]
 - `loadDocumentPair()` / `saveDocumentPair()` [new]: Map an active Mermaid document and its Excalidraw scene to filesystem paths and serialized content.
 
 `apps/desktop/src-tauri/src/commands.rs` [new, tentative]
 - Native filesystem commands [new]: Enforce selected-root boundaries and perform atomic read/write/watch operations.
 
-`apps/web/index.tsx`
+`frontend/index.tsx`
 - Workspace bootstrap [modify]: Connect the selected filesystem adapter, file tree, active document loading, and save status.
 
 ## Implementation plan

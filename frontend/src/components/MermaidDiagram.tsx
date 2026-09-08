@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import mermaid from "mermaid";
-import { runMermaidTaskSequentially } from "@mermaid-excalidraw-sync/core/mermaidExecutionQueue";
+import { runMermaidTaskSequentially } from "@mermaid-excalidraw-sync/excalidraw-service/mermaidExecutionQueue";
 
 interface MermaidProps {
   id: string;

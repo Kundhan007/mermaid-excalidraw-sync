@@ -1,5 +1,5 @@
 {
-  "name": "@mermaid-excalidraw-sync/web",
+  "name": "@mermaid-excalidraw-sync/frontend",
   "version": "0.1.0",
   "private": true,
   "description": "Mermaid Excalidraw Sync web workspace",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.18.0-a9ca16e",
-    "@mermaid-excalidraw-sync/core": "0.1.0",
+    "@mermaid-excalidraw-sync/excalidraw-service": "0.1.0",
     "mermaid": "^11.12.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

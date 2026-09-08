@@ -5,17 +5,25 @@ Local Mermaid + Excalidraw diagram workspace — tabs, sync, diffs, Mac filesyst
 ## Repository structure
 
 ```text
-├── apps/
-│   └── web/               # Web workspace (React + Vite + Excalidraw canvas)
 ├── packages/
-│   └── core/              # Mermaid → Excalidraw converter library
-│       ├── src/
-│       └── tests/
-├── e2e/                   # (removed for now — Playwright visual tests)
-└── plans/                 # Implementation plans
+│   └── excalidraw_service/    # ALL conversion logic (TypeScript library, frozen)
+│       ├── src/               #   mermaid → excalidraw pipeline
+│       └── tests/             #   unit tests (vitest)
+├── frontend/                  # Minimal web UI (2 tabs: Mermaid | Excalidraw)
+│   ├── index.html
+│   └── src/                   #   tab switching, canvas mount, API client
+├── backend/                   # Python FastAPI — the file/version clerk
+│   ├── pyproject.toml         #   fastapi, uvicorn, watchdog, pytest
+│   ├── app/                   #   files, watching, versions (plans 03–04)
+│   └── tests/
+├── plans/                     # Implementation plans
+├── public/                    # frontend build output (generated, gitignored)
+└── package.json               # JS workspace root (frontend + packages)
 ```
 
-`apps/web` imports the converter via the `@mermaid-excalidraw-sync/core` alias (resolved to `packages/core/src` in Vite and TS paths).
+- `frontend` imports the converter via the `@mermaid-excalidraw-sync/excalidraw-service` alias (resolved to `packages/excalidraw_service/src` in Vite and TS paths).
+- **The browser is the brain** — conversion and sync logic run in-tab; the Python backend only reads/writes files and versions over HTTP.
+- The conversion library is upstream-derived and feature-complete: we do not add JS logic there.
 
 ## Set up
 

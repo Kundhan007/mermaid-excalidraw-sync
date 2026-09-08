@@ -1,5 +1,5 @@
 {
-  "name": "@mermaid-excalidraw-sync/core",
+  "name": "@mermaid-excalidraw-sync/excalidraw-service",
   "version": "0.1.0",
   "description": "Mermaid to Excalidraw converter core",
   "main": "dist/index.js",

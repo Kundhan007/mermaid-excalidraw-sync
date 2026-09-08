@@ -2,12 +2,12 @@ import { graphToExcalidraw } from "../src/graphToExcalidraw.js";
 import { parseMermaid } from "../src/parseMermaid.js";
 import { DEFAULT_FONT_SIZE } from "../src/constants.js";
 import { isValidCSSColor } from "../src/parser/cssUtils.js";
-import { CLASS_DIAGRAM_TESTCASES } from "../../../apps/web/src/testcases/class.ts";
-import { ERD_DIAGRAM_TESTCASES } from "../../../apps/web/src/testcases/er.ts";
-import { FLOWCHART_DIAGRAM_TESTCASES } from "../../../apps/web/src/testcases/flowchart.ts";
-import { SEQUENCE_DIAGRAM_TESTCASES } from "../../../apps/web/src/testcases/sequence.ts";
-import { STATE_DIAGRAM_TESTCASES } from "../../../apps/web/src/testcases/state.ts";
-import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../../../apps/web/src/testcases/unsupported.ts";
+import { CLASS_DIAGRAM_TESTCASES } from "../../../frontend/src/testcases/class.ts";
+import { ERD_DIAGRAM_TESTCASES } from "../../../frontend/src/testcases/er.ts";
+import { FLOWCHART_DIAGRAM_TESTCASES } from "../../../frontend/src/testcases/flowchart.ts";
+import { SEQUENCE_DIAGRAM_TESTCASES } from "../../../frontend/src/testcases/sequence.ts";
+import { STATE_DIAGRAM_TESTCASES } from "../../../frontend/src/testcases/state.ts";
+import { UNSUPPORTED_DIAGRAM_TESTCASES } from "../../../frontend/src/testcases/unsupported.ts";
 
 const PLAYGROUND_TESTCASES = [
   ...FLOWCHART_DIAGRAM_TESTCASES,

@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.common.json",
+  "extends": "../tsconfig.common.json",
   "compilerOptions": {
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
@@ -14,8 +14,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "@mermaid-excalidraw-sync/core": ["../../packages/core/src/index.ts"],
-      "@mermaid-excalidraw-sync/core/*": ["../../packages/core/src/*"]
+      "@mermaid-excalidraw-sync/excalidraw-service": ["../packages/excalidraw_service/src/index.ts"],
+      "@mermaid-excalidraw-sync/excalidraw-service/*": ["../packages/excalidraw_service/src/*"]
     }
   },
   "include": ["./**/*"]

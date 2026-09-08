@@ -18,7 +18,7 @@ Turn the current single-page playground into a document workspace with the reque
 ## Change tree
 
 ```text
-apps/web/
+frontend/
 ├── index.tsx                  [modify]
 ├── style.scss                 [modify]
 ├── WorkspaceLayout.tsx        [new, tentative]
@@ -29,22 +29,22 @@ apps/web/
 
 ## File and function changes
 
-`apps/web/index.tsx`
+`frontend/index.tsx`
 - `App()` [modify]: Replace the current left-form/right-canvas composition with workspace layout state and active-tab rendering.
 
-`apps/web/WorkspaceLayout.tsx` [new, tentative]
+`frontend/WorkspaceLayout.tsx` [new, tentative]
 - `WorkspaceLayout()` [new]: Compose the file/sidebar area, tab strip, active content panel, and persistent canvas region.
 
-`apps/web/WorkspaceTabs.tsx` [new, tentative]
+`frontend/WorkspaceTabs.tsx` [new, tentative]
 - `WorkspaceTabs()` [new]: Render Mermaid, Current/Diff, Excalidraw, and compact utility tab selection with active/dirty indicators.
 
-`apps/web/DiffPane.tsx` [new, tentative]
+`frontend/DiffPane.tsx` [new, tentative]
 - `DiffPane()` [new]: Render source/scene change summaries supplied by the sync model without owning persistence.
 
-`apps/web/UtilityPanel.tsx` [new, tentative]
+`frontend/UtilityPanel.tsx` [new, tentative]
 - `UtilityPanel()` [new]: Render file tree, sync action/status, and version-history entry points in a compact panel.
 
-`apps/web/style.scss`
+`frontend/style.scss`
 - Workspace layout styles [modify]: Replace the fixed two-column assumptions with responsive tabs, split panes, and compact utility navigation.
 
 ## Implementation plan

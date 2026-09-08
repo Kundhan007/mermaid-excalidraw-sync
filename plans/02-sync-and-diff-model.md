@@ -13,7 +13,7 @@ The fork already parses Mermaid and generates Excalidraw elements through `parse
 ## Change tree
 
 ```text
-apps/web/
+frontend/
 ├── index.tsx                    [modify]
 ├── CustomTest.tsx               [modify]
 ├── ExcalidrawWrapper.tsx        [modify]
@@ -23,35 +23,35 @@ apps/web/
     ├── workspaceStore.ts        [new, tentative]
     ├── syncController.ts        [new, tentative]
     └── sceneSerialization.ts    [new, tentative]
-packages/core/src/
+packages/excalidraw_service/src/
 └── interfaces.ts                [modify, if shared document types are exported]
 ```
 
 ## File and function changes
 
-`apps/web/state/workspaceTypes.ts` [new, tentative]
+`frontend/state/workspaceTypes.ts` [new, tentative]
 - `WorkspaceDocument` [new]: Define path, Mermaid source, Excalidraw scene, base revision, per-side revision, dirty state, and sync metadata.
 
-`apps/web/state/workspaceStore.ts` [new, tentative]
+`frontend/state/workspaceStore.ts` [new, tentative]
 - `createWorkspaceStore()` [new]: Own active document state, monotonic edit sequence, and last-synchronized snapshot.
 
-`apps/web/state/syncController.ts` [new, tentative]
+`frontend/state/syncController.ts` [new, tentative]
 - `syncWorkspaceDocument()` [new]: Compare source/canvas revision sequence numbers and apply the selected latest-side policy.
 - `recordSourceEdit()` / `recordCanvasEdit()` [new]: Record edits with a local monotonic revision rather than relying only on wall-clock time.
 
-`apps/web/state/sceneSerialization.ts` [new, tentative]
+`frontend/state/sceneSerialization.ts` [new, tentative]
 - `serializeExcalidrawScene()` / `deserializeExcalidrawScene()` [new]: Persist scene elements, app state, and binary files without losing canvas content.
 
-`apps/web/index.tsx`
+`frontend/index.tsx`
 - `handleOnChange()` [modify]: Dispatch source edits to the workspace store instead of writing only one localStorage string.
 
-`apps/web/CustomTest.tsx`
+`frontend/CustomTest.tsx`
 - Mermaid editor wiring [modify]: Read/write the active document source and expose parse errors through workspace status.
 
-`apps/web/ExcalidrawWrapper.tsx`
+`frontend/ExcalidrawWrapper.tsx`
 - Excalidraw change callback [modify]: Capture user canvas edits, while distinguishing generated scene replacement from manual edits.
 
-`apps/web/MermaidDiagram.tsx`
+`frontend/MermaidDiagram.tsx`
 - Render status [modify]: Report render success/failure to the active document rather than silently clearing failed previews.
 
 ## Implementation plan
