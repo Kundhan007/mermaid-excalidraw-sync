@@ -60,3 +60,12 @@ frontend/index.tsx                 [modify]
 ## Open decision
 
 Choose between Tauri (recommended: smaller native footprint and Rust filesystem boundary), Electron (more familiar Node filesystem APIs but heavier), or browser-only (cannot meet the full “same Mac filesystem” requirement).
+
+## Addendum — Logging API (decided)
+
+A log ingestion endpoint is part of the backend contract so frontend events survive tab close:
+
+- `POST /api/logs` — accepts `{ events: [...] }` batches; appends to rotating `backend/logs/frontend-YYYYMMDD.log`.
+- Frontend keeps a tiny logger wrapper: `console` + buffer + periodic flush and `sendBeacon` on `pagehide`.
+- Log only meaningful events (sync decisions, conflicts, saves, snapshots, conversion/API errors). Truncate payloads (e.g., 200 chars). Include a per-tab `session` id for correlation.
+- Backend's own logs write to the same `logs/` directory. Backend never interprets log content — sink only.
