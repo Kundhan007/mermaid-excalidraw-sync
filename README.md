@@ -35,6 +35,8 @@ What goes where:
 - **`frontend/converter/`** — mermaid → excalidraw math only. Frozen: we do not add JS logic here.
 - A new runtime piece (e.g. a CLI) becomes a top-level app folder; a new shared browser lib becomes `frontend/<name>/`.
 
+**Containment rule (hard requirement):** every folder owns all of its own byproducts — build outputs, caches, venvs, logs live *inside* the folder that produces them, never at the root. The root stays exactly: `api/`, `frontend/`, `diagrams/`, `plans/`, `package.json`, `yarn.lock`, `README.md`, `LICENSE`.
+
 Notes:
 
 - `frontend/app` imports the engine via the `@mermaid-excalidraw-sync/converter` alias (resolved to `../converter/src`).
